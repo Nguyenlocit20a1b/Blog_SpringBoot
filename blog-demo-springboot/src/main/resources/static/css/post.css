@@ -1,0 +1,370 @@
+body {
+    background: #e5ded8;
+    box-sizing: border-box;
+}
+.blog-container {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, .2) 0 4px 2px -2px;
+    font-family: "adelle-sans", sans-serif;
+    font-weight: 100;
+    margin: 48px auto;
+    width: 20rem;
+}
+@media screen and (min-width: 480px) {
+    .blog-container {
+        width: 28rem;
+    }
+}
+@media screen and (min-width: 767px) {
+    .blog-container {
+        width: 40rem;
+    }
+}
+@media screen and (min-width: 959px) {
+    .blog-container {
+        width: 50rem;
+    }
+}
+.blog-container a {
+    color: #4d4dff;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+.blog-container a:hover {
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+.blog-cover {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/17779/yosemite-3.jpg");
+    background-size: cover;
+    border-radius: 5px 5px 0 0;
+    height: 15rem;
+    box-shadow: inset rgba(0, 0, 0, .2) 0 64px 64px 16px;
+}
+.blog-author, .blog-author--no-cover {
+    margin: 0 auto;
+    padding-top: 0.125rem;
+    width: 80%;
+}
+.blog-author h3::before, .blog-author--no-cover h3::before {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/17779/russ.jpeg");
+    background-size: cover;
+    border-radius: 50%;
+    content: " ";
+    display: inline-block;
+    height: 32px;
+    margin-right: 0.5rem;
+    position: relative;
+    top: 8px;
+    width: 32px;
+}
+.blog-author h3 {
+    color: #fff;
+    font-weight: 100;
+}
+.blog-author--no-cover h3 {
+    color: #999;
+    font-weight: 100;
+}
+.blog-body {
+    margin: 0 auto;
+    width: 80%;
+}
+.video-body {
+    height: 100%;
+    width: 100%;
+}
+.blog-title h1 a {
+    color: #333;
+    font-weight: 100;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.blog-summary p {
+    color: #4d4d4d;
+}
+.blog-tags ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+}
+.blog-tags li + li {
+    margin-left: 0.5rem;
+}
+.blog-tags a {
+    border: 1px solid #999;
+    border-radius: 3px;
+    color: #999;
+    font-size: 0.75rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    padding: 0 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 5rem;
+}
+.blog-footer {
+    border-top: 1px solid #e6e6e6;
+    margin: 0 auto;
+    padding-bottom: 0.125rem;
+    width: 80%;
+}
+.blog-footer ul {
+    list-style: none;
+    display: flex;
+    flex: row wrap;
+    justify-content: flex-end;
+    padding-left: 0;
+}
+.blog-footer li:first-child {
+    margin-right: auto;
+}
+.blog-footer li + li {
+    margin-left: 0.5rem;
+}
+.blog-footer li {
+    color: #999;
+    font-size: 0.75rem;
+    height: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    white-space: nowrap;
+}
+.blog-footer li a {
+    color: #999;
+}
+.comments {
+    margin-right: 1rem;
+}
+.published-date {
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 0 0.5rem;
+}
+.numero {
+    position: relative;
+    top: -0.5rem;
+}
+.icon-star, .icon-bubble {
+    fill: #999;
+    height: 24px;
+    margin-right: 0.5rem;
+    transition: 0.25s ease;
+    width: 24px;
+}
+.icon-star:hover, .icon-bubble:hover {
+    fill: #ff4d4d;
+}
+.readmore__content {
+    width: 100%;
+
+}
+
+button.readmore__toggle {
+    display: flex;
+    lighting-color: #d7e7e7;
+    background: linear-gradient(0deg, rgb(245, 249, 255) 0%, rgb(183, 183, 185) 100%);
+    color: #ffffff;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+    border-radius: 2px;
+    font-family: sans-serif;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+
+/* Navbar section */
+
+.nav {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 3rem;
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.nav div.logo a:hover {
+    color: #00E676;
+}
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+
+/* Home section */
+
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #111;
+        /*same background color of navbar*/
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 3rem;
+        padding: 20px;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <script src="https://use.fontawesome.com/7ae1fc72ca.js"></script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Blog Chill</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav ">
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a  th:href="@{/posts}">Blogs</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Sign up <i class="fa fa-user-plus"></i></a></li>
+                <li><a href="#">Login <i class="fa fa-user"></i></a></li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="content">
+                <h1>Blog Chill </h1>
+                <h3>Don't be ashamed when you don't know, we're only ashamed when we don't learn.</h3>
+                <hr>
+                <a th:href="@{/posts}" class="btn btn-default btn-lg"><i class="fa fa-paw" aria-hidden="true"></i>Get Started!
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mb-5">
+                <h1 class="display-4">Featured articles</h1>
+                <p class="lead">Lorem ipsum dolor sit amet at enim hac integer volutpat maecenas pulvinar. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4" th:each="post : ${posts}">
+                <div class="card text-white card-has-bg click-col"
+                     style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+                    <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street"
+                         alt="Government Lorem Ipsum Sit Amet Consectetur dipisi?">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <small class="card-meta mb-2" th:text="${post.category.categoryName}">Category</small>
+                            <h4 class="card-title mt-0 "><a class="text-white" th:href="@{'/detailPost/'+ ${post.id}}" th:text="${post.postTitle}">
+                                Post Title </a></h4>
+                            <small class="creatAt" th:text="${post.createAt}"><i class="far fa-clock"></i> Create At</small>
+                        </div>
+                        <div class="card-footer">
+                            <div class="media">
+                                <img class="mr-3 rounded-circle"
+                                     src="https://assets.codepen.io/460692/internal/avatars/users/default.png"
+                                     alt="Generic placeholder image" style="max-width:50px ; border-radius: 50%">
+                                <div class="media-body">
+                                    <h6 class="my-0 text-white d-block" th:text="${post.user.firstName + ' ' + post.user.lastName}">Author </h6>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+</script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

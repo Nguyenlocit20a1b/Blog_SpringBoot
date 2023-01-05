@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>Create</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-8 col-md-offset-2">
+
+      <h1>Create post</h1>
+
+      <form action="#" method="POST" th:action="@{'/postUpdate/{id}'(id=${post.id})}" th:object="${post}" >
+
+        <label >Categories <span class="require">*</span></label>
+        <select class="form-select" aria-label="Default select example" th:field="*{category}">
+          <option th:each="category : ${categories}"  th:value="${category.id}" th:text="${category.categoryName}" >>
+          </option>
+
+        </select>
+        <div class="form-group">
+          <input th:field="${post.id}" type="hidden" class="form-control" name="" />
+        </div>
+        <div class="form-group">
+          <input th:field="${post.updateAt}"  type="hidden" class="form-control" name="createAt" />
+        </div>
+        <div class="form-group">
+          <label >Title <span class="require">*</span></label>
+          <input th:field="${post.postTitle}"   type="text" class="form-control" name="title" />
+        </div>
+
+        <div class="form-group">
+          <label> Content</label>
+          <textarea th:field="${post.content}"  rows="5" class="form-control" name="description" ></textarea>
+        </div>
+
+        <div class="form-group">
+          <p><span class="require">*</span> - required fields</p>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">
+            Create
+          </button>
+          <button class="btn btn-default">
+            Cancel
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+
+</body>
+<style>
+  .require {
+    color: #666;
+  }
+  label small {
+    color: #999;
+    font-weight: normal;
+  }
+</style>
+</html>
